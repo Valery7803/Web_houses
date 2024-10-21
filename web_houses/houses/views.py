@@ -13,5 +13,9 @@ def contacts(request):
     return render(request, 'houses/contacts.html')
 
 
+def show_house(request, show_id):
+    return HttpResponse(f'Обзор дома с {show_id}')
+
+
 def login(request):
     return HttpResponse('Авторизация')
