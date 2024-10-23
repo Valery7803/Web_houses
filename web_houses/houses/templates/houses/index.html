@@ -8,11 +8,16 @@
 <body>
     <p>{{ menu|join:" | " }}</p>
     <h1>{{ title }}</h1>
+    <!-- Перебираю в шаблоне контекст -->
     <ul>
         {% for p in home %}
         <li>
             <h2>{{ p.title }}</h2>
-            <h4>{{ p.context }}</h4>
+            <p>{{ p.context }}</p>
+            <p><a href="{% url 'show_house' p.id %}">Читать описание</a></p>
+            {% if not forloop.last %}
+            <hr>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
