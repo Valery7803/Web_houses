@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 menu = [
-    'Главная страница', 'Страница про нас', 'Наши контакты', 'Авторизация'
+    {'title': 'Страница про нас', 'url_name': 'about'},
+    {'title': 'Наши контакты', 'url_name': 'contacts'},
+    {'title': 'Авторизация', 'url_name': 'login'},
 ]
 
 data_db = [

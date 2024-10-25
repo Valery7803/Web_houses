@@ -1,0 +1,15 @@
+body {
+    background-color: aquamarine;
+}
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
+.up_site {
+    height: 200px;
+    width: auto;
+    background-color: blanchedalmond;
+    border: solid 2px black;
+}
