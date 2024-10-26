@@ -5,22 +5,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'houses/css/main.css' %}">
+    <link type="text/css" href="{% static 'houses/css/style.css' %}" rel="stylesheet"/>
     <title>{{ title }}</title>
 </head>
 <body>
-    <div class="up_site">
-        <img src="{% static 'houses/imgs/logo.house.jpg' %}" alt="logo">
-        <div class="text_logo">
-            <p><h1>Строительная группа "PYRAMID"</h1></p>
-            <span><h3>Строительство загородных котеджей, домов</h3></span>
+    <div class="header_houses">
+        <div class="header_img">
+            <img src="{% static 'houses/imgs/logo.house.jpg' %}" alt="logo">
         </div>
-        <ul>
-            <li><a href="{% url 'home' %}">Главная страница</a></li>
-            {% for m in menu %}
-            <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <div class="header_text">
+            <p><h1>Строительная группа "PYRAMID"</h1></p>
+            <h3>Строительство загородных котеджей, домов</h3>
+        </div>
+        <div class="header_menu">
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Главная страница</a></li>
+                {% for m in menu %}
+                <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% block content %}
 {% endblock %}

@@ -1,0 +1,26 @@
+img {
+    height: 207px;
+    width: 300px;
+    float: left;
+}
+
+.header_houses {
+    width: auto;
+    background-color: aquamarine;
+    border: solid 2px black;
+}
+
+.header_text {
+    text-align: center;
+    width: auto;
+}
+
+h1,h3 {
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    text-align: center;
+    
+}
