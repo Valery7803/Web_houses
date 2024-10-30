@@ -7,4 +7,5 @@ class House(models.Model):
     time_update = models.DateTimeField(auto_now=True)
     
     
-    
+    def __str__(self) -> str:
+        return self.title
