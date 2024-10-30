@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
+from .models import House
 
 menu = [
     {'title': 'Страница про нас', 'url_name': 'about'},
@@ -41,8 +42,15 @@ def contacts(request):
     return render(request, 'houses/contacts.html')
 
 # Представление страницы 'обзора дома'
-def show_house(request, show_id):
-    return HttpResponse(f'Обзор дома с {show_id}')
+def show_house(request, show_slug):
+    house = get_object_or_404(House, slug=show_slug)
+    data = {
+        'title': house.title,
+        'menu': menu,
+        'house': house,
+        'cat_selected': 1,
+    }
+    return render(request, 'houses/show.html', data)
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
